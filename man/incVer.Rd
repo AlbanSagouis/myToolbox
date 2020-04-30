@@ -15,13 +15,12 @@ incVer(pkg, folder = ".", increase = "dev")
 }
 \description{
 Reads DESCRIPTION from installed package 'pkg' and makes a new one in the specified
-'folder'. Three options for 'increase' are "minor", "patch" and "dev" respectively
-incrementing the second, third and fourth elements of version 0.1.0.9012.
+'folder'. Four options for 'increase' are "major", minor", "patch" and "dev"
+respectively incrementing the first to fourth element of version 0.1.0.9012.
+Also changes the date to system date.
 }
 \details{
-Also updates the date to system date.
-
-description. Originally posted by alko989 here https://stackoverflow.com/q/24209336. Hadley Wickham discusses when and how increment version numbers in his book http://r-pkgs.had.co.nz/release.html#release-version
+Originally posted by alko989 here https://stackoverflow.com/q/24209336. Hadley Wickham discusses when and how increment version numbers in his book http://r-pkgs.had.co.nz/release.html#release-version
 }
 \author{
 alko989, Alban Sagouis
