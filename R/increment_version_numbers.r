@@ -5,12 +5,12 @@
 #' respectively incrementing the first to fourth element of version 0.1.0.9012.
 #' Also changes the date to system date.
 #'
-#' @param pkg a character vector containing complete
-#' @param folder description
-#' @param increase description
+#' @param pkg A character vector withthe name of the package to update.
+#' @param folder Folder in which DESCRIPTION is saved. Should be left as '.'.
+#' @param increase Character string, either major, minor, patch or dev.
 #,
 #' @return NULL
-#' @details Originally posted by alko989 here https://stackoverflow.com/q/24209336. Hadley Wickham discusses when and how increment version numbers in his book http://r-pkgs.had.co.nz/release.html#release-version
+#' @details Function originally posted by alko989 here https://stackoverflow.com/q/24209336. Hadley Wickham discusses when and how increment version numbers in his book http://r-pkgs.had.co.nz/release.html#release-version
 #'
 #' @author alko989, Alban Sagouis
 #'
@@ -20,6 +20,9 @@
 
 incVer <- function(pkg, folder=".", increase="dev"){
    ## Read DESCRIPTION
+   ### If Built is kept, package built does not work. If a vector with column names is
+   ### provided to avoid reading twice, there is a risk to overlook info saved in
+   ### DESCRIPTION
    dcf_colnames <- colnames(read.dcf(file=system.file("DESCRIPTION", package=pkg)))
    dcf_colnames <- dcf_colnames[dcf_colnames != "Built"]
    f <- read.dcf(file=system.file("DESCRIPTION", package=pkg),
