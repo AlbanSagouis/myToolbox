@@ -4,11 +4,15 @@
 \alias{executeAll}
 \title{Execute all scripts inside a folder}
 \usage{
-executeAll(fullPath = NULL)
+executeAll(fullPath = NULL, echo = TRUE, local = TRUE)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the folder containing the scripts to
 execute}
+
+\item{echo}{logical. Passed to \code{\link[base]{source}}.}
+
+\item{local}{logical. Passed to \code{\link[base]{source}}.}
 }
 \description{
 Source all files with a .r or .R extension in the specified folder.

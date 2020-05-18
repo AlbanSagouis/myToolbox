@@ -5,13 +5,13 @@
 #' @param fullPath A character vector with the path to the script to modify.
 #' @param pattern passed to \code{gsub}.
 #' @param replacement passed to \code{gsub}.
-#' @param newPath description
-#' @param subdirectories description
+#' @param newPath Character vector. Used if a copy of the script should be created
+#' following this path.
 #'
 #' @return NULL
 #'
 #' @details If not working inside an Rproject, path has to be complete from root.
-#' @seealso Too search for text, see \code{\link[tfse]{search_files}}.
+#' @seealso To search for text in any text file, see \code{\link[tfse]{search_files}}.
 #' @author Alban Sagouis
 #' @export
 
@@ -38,9 +38,9 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #'
 #' @param fullPath A character vector with the path to the folder countaining
 #' the scripts to modify.
-#' @param pattern passed to \code{gsub}.
-#' @param replacement passed to \code{gsub}.
-#' @param recursive logical. Passed to list.files. Should the listing recurse into directories?
+#' @param pattern passed to \code{\link[base]{{gsub}}.
+#' @param replacement passed to \code{\link[base]{{gsub}.
+#' @param recursive logical. Passed to \code{\link[base]{list.files}}. Should the listing recurse into directories?
 #' @param newPath description
 #'
 #' @return NULL
@@ -49,7 +49,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #' @author Alban Sagouis
 #' @export
 
-gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath=NULL) {
+gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath = NULL) {
    listF <- list.files(fullPath, pattern = ".R|.r", full.names = TRUE, recursive = recursive)
    lapply(listF, gsubInOneScript, pattern, replacement, newPath)
 }

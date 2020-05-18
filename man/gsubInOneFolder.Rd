@@ -4,29 +4,27 @@
 \alias{gsubInOneFolder}
 \title{Replace text in all scripts from a folder}
 \usage{
-gsubInOneFolder(fullPath, pattern, replacement, recursive = FALSE)
+gsubInOneFolder(
+  fullPath,
+  pattern,
+  replacement,
+  recursive = FALSE,
+  newPath = NULL
+)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the folder countaining
 the scripts to modify.}
 
-\item{pattern}{passed to /code{gsub}.}
+\item{recursive}{logical. Passed to \code{\link[base]{list.files}}. Should the listing recurse into directories?}
 
-\item{replacement}{passed to /code{gsub}.}
-
-\item{recursive}{logical. Passed to list.files. Should the listing recurse into directories?}
+\item{newPath}{description}
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.
 }
 \details{
 If not working inside an Rproject, path has to be complete from root.
-}
-\examples{
-fullPath <- "C:/Users/as80fywe/idiv/my r packages/myToolbox/tests/testthat/objects/"
-fullPath <- "./tests/testthat/objects/"
-gsubInOneScript(fullPath, pattern="random_2020", replacement = "newID_2021")
-
 }
 \author{
 Alban Sagouis

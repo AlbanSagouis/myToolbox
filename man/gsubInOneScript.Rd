@@ -4,13 +4,7 @@
 \alias{gsubInOneScript}
 \title{Replace text in one script}
 \usage{
-gsubInOneScript(
-  fullPath,
-  pattern,
-  replacement,
-  newPath = NULL,
-  subdirectories = FALSE
-)
+gsubInOneScript(fullPath, pattern, replacement, newPath = NULL)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the script to modify.}
@@ -19,9 +13,8 @@ gsubInOneScript(
 
 \item{replacement}{passed to \code{gsub}.}
 
-\item{newPath}{description}
-
-\item{subdirectories}{description}
+\item{newPath}{Character vector. Used if a copy of the script should be created
+following this path.}
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.
@@ -29,14 +22,8 @@ Open a file with a .r or .R extension and runs a gsub.
 \details{
 If not working inside an Rproject, path has to be complete from root.
 }
-\examples{
-fullPath <- "C:/Users/as80fywe/idiv/my r packages/myToolbox/tests/testthat/objects/random_script.r"
-fullPath <- "./tests/testthat/objects/random_script.r"
-gsubInOneScript(fullPath, pattern="random_2020", replacement = "newID_2021")
-
-}
 \seealso{
-Too search for text, see \code[tfse]{search_files}.
+To search for text in any text file, see \code{\link[tfse]{search_files}}.
 }
 \author{
 Alban Sagouis
