@@ -4,7 +4,7 @@
 \alias{gsubInOneFolder}
 \title{Replace text in all scripts from a folder}
 \usage{
-gsubInOneFolder(fullPath, pattern, replacement)
+gsubInOneFolder(fullPath, pattern, replacement, recursive = FALSE)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the folder countaining
@@ -13,6 +13,8 @@ the scripts to modify.}
 \item{pattern}{passed to /code{gsub}.}
 
 \item{replacement}{passed to /code{gsub}.}
+
+\item{recursive}{logical. Passed to list.files. Should the listing recurse into directories?}
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.
