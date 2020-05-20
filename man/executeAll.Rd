@@ -17,6 +17,9 @@ execute}
 \item{recursive}{logical. Passed to \code{\link[base]{list.files}}. Should the
 listing recurse into directories?}
 }
+\value{
+The list of executed scripts.
+}
 \description{
 Source all files with a .r or .R extension in the specified folder.
 }

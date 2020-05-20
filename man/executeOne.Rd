@@ -13,9 +13,6 @@ executeOne(fullPath = NULL, echo = FALSE, local = TRUE)
 
 \item{local}{logical. Passed to \code{\link[base]{source}}.}
 }
-\value{
-SHOULD BE THE NUMBER OF SOURCED SCRIPTS
-}
 \description{
 Source the given file with a .r or .R extension.
 }

@@ -6,7 +6,7 @@
 #' @param echo logical. Passed to \code{\link[base]{source}}.
 #' @param local logical. Passed to \code{\link[base]{source}}.
 #'
-#' @return SHOULD BE THE NUMBER OF SOURCED SCRIPTS
+#' @return NULL
 #' @details If not working inside an Rproject, path has to be complete from root.
 #'
 #' @author Alban Sagouis
@@ -29,7 +29,7 @@ executeOne <- function(fullPath = NULL, echo = FALSE, local = TRUE) {
 #' @param recursive logical. Passed to \code{\link[base]{list.files}}. Should the
 #' listing recurse into directories?
 #'
-#' @return NULL
+#' @return The list of executed scripts.
 #' @details If not working inside an Rproject, path has to be complete from root.
 #'
 #' @author Alban Sagouis
@@ -40,4 +40,5 @@ executeOne <- function(fullPath = NULL, echo = FALSE, local = TRUE) {
 executeAll <- function(fullPath = NULL, echo = FALSE, local = TRUE, recursive = FALSE) {
    listF <- list.files(fullPath, pattern = ".R|.r", full.names = TRUE, recursive = recursive)
    lapply(listF, executeOne, echo = echo, local = local)
+   return(listF)
 }
