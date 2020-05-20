@@ -58,6 +58,8 @@ regmatches_.list <- function(x, pat, drop = FALSE, ...) {
    x
 }
 
+
+
 #' smart gregexpr wrapper
 #'
 #' @param x Input text

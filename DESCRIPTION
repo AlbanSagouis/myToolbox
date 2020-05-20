@@ -1,12 +1,15 @@
 Package: myToolbox
 Type: Package
 Title: Various functions I gathered or wrote
-Version: 0.0.4.9001
+Version: 0.0.4.9002
 Date: 2020-05-20
 Author: Alban Sagouis [aut, cre]
 Maintainer: Alban Sagouis <alban.sagouis@idiv.de>
 Description: This package provides a set of convenience functions.
-License: MIT + LICENSE file
+   Some functions come for other packages.
+     - tfse.foo functions come from tfse package published under MIT license by Michael Wayne
+     Kearney.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0

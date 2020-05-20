@@ -11,8 +11,6 @@
 #'   .Rmd .md .html .txt .cpp .h files.
 #' @return Output from terminal - file name, line number, and preview of
 #'   matching text
-#' @example
-#' search_files('text')
 #' @export
 #'
 
