@@ -6,7 +6,7 @@
 #' @param echo logical. Passed to \code{\link[base]{source}}.
 #' @param local logical. Passed to \code{\link[base]{source}}.
 #'
-#' @return NULL
+#' @return SHOULD BE THE NUMBER OF SOURCED SCRIPTS
 #' @details If not working inside an Rproject, path has to be complete from root.
 #'
 #' @author Alban Sagouis
@@ -14,7 +14,7 @@
 #'
 #' @export
 
-executeOne <- function(fullPath = NULL, echo = TRUE, local = TRUE) {
+executeOne <- function(fullPath = NULL, echo = FALSE, local = TRUE) {
    source(fullPath, encoding = 'UTF-8', echo = echo, local = local)
 }
 
@@ -26,6 +26,8 @@ executeOne <- function(fullPath = NULL, echo = TRUE, local = TRUE) {
 #' execute
 #' @param echo logical. Passed to \code{\link[base]{source}}.
 #' @param local logical. Passed to \code{\link[base]{source}}.
+#' @param recursive logical. Passed to \code{\link[base]{list.files}}. Should the
+#' listing recurse into directories?
 #'
 #' @return NULL
 #' @details If not working inside an Rproject, path has to be complete from root.
@@ -35,8 +37,7 @@ executeOne <- function(fullPath = NULL, echo = TRUE, local = TRUE) {
 #'
 #' @export
 
-executeAll <- function(fullPath = NULL, echo = TRUE, local = TRUE) {
-   # if(substr(path, 1, 1) %in% c('~', '.')) path <- path.expand(path)
-   listF <- list.files(path, pattern = ".R|.r", full.names = TRUE)
+executeAll <- function(fullPath = NULL, echo = FALSE, local = TRUE, recursive = FALSE) {
+   listF <- list.files(fullPath, pattern = ".R|.r", full.names = TRUE, recursive = recursive)
    lapply(listF, executeOne, echo = echo, local = local)
 }

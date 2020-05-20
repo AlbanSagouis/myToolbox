@@ -4,7 +4,7 @@
 \alias{executeAll}
 \title{Execute all scripts inside a folder}
 \usage{
-executeAll(fullPath = NULL, echo = TRUE, local = TRUE)
+executeAll(fullPath = NULL, echo = FALSE, local = TRUE, recursive = FALSE)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the folder containing the scripts to
@@ -13,6 +13,9 @@ execute}
 \item{echo}{logical. Passed to \code{\link[base]{source}}.}
 
 \item{local}{logical. Passed to \code{\link[base]{source}}.}
+
+\item{recursive}{logical. Passed to \code{\link[base]{list.files}}. Should the
+listing recurse into directories?}
 }
 \description{
 Source all files with a .r or .R extension in the specified folder.

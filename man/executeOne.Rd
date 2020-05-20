@@ -4,7 +4,7 @@
 \alias{executeOne}
 \title{Execute one script in the background not loading anything in the user's current environment}
 \usage{
-executeOne(fullPath = NULL, echo = TRUE, local = TRUE)
+executeOne(fullPath = NULL, echo = FALSE, local = TRUE)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the scripts to execute}
@@ -12,6 +12,9 @@ executeOne(fullPath = NULL, echo = TRUE, local = TRUE)
 \item{echo}{logical. Passed to \code{\link[base]{source}}.}
 
 \item{local}{logical. Passed to \code{\link[base]{source}}.}
+}
+\value{
+SHOULD BE THE NUMBER OF SOURCED SCRIPTS
 }
 \description{
 Source the given file with a .r or .R extension.

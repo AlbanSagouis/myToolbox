@@ -9,12 +9,15 @@ gsubInOneScript(fullPath, pattern, replacement, newPath = NULL)
 \arguments{
 \item{fullPath}{A character vector with the path to the script to modify.}
 
-\item{pattern}{passed to \code{gsub}.}
+\item{pattern}{passed to \code{\link[base:grep]{base::gsub}}.}
 
-\item{replacement}{passed to \code{gsub}.}
+\item{replacement}{passed to \code{\link[base:grep]{base::gsub}}.}
 
 \item{newPath}{Character vector. Used if a copy of the script should be created
 following this path.}
+}
+\value{
+SHOULD RETURN THE NUMBER OF MATCHES
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.
@@ -23,7 +26,7 @@ Open a file with a .r or .R extension and runs a gsub.
 If not working inside an Rproject, path has to be complete from root.
 }
 \seealso{
-To search for text in any text file, see \code{\link[tfse]{search_files}}.
+To search for text in any text file, see \code{search_files}.
 }
 \author{
 Alban Sagouis

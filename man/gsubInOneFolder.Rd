@@ -16,9 +16,16 @@ gsubInOneFolder(
 \item{fullPath}{A character vector with the path to the folder countaining
 the scripts to modify.}
 
-\item{recursive}{logical. Passed to \code{\link[base]{list.files}}. Should the listing recurse into directories?}
+\item{pattern}{passed to \code{\link[base:grep]{base::gsub}}.}
+
+\item{replacement}{passed to \code{\link[base:grep]{base::gsub}}.}
+
+\item{recursive}{logical. Passed to \code{\link[base:list.files]{base::list.files}}. Should the listing recurse into directories?}
 
 \item{newPath}{description}
+}
+\value{
+SHOULD RETURN THE NUMBER OF MATCHES PER SCRIPTS
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.
