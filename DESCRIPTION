@@ -7,11 +7,12 @@ Author: Alban Sagouis [aut, cre]
 Maintainer: Alban Sagouis <alban.sagouis@idiv.de>
 Description: This package provides a set of convenience functions.
    Some functions come for other packages.
-     - tfse.foo functions come from tfse package published under MIT license by Michael Wayne
+     - tfse._ functions come from `tfse` package published under MIT license by Michael Wayne
      Kearney.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Suggests: rprojroot
 RoxygenNote: 7.1.0
 NeedsCompilation: no
 Packaged: 2020-05-18 08:21:18 UTC; as80fywe

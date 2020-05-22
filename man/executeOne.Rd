@@ -2,7 +2,7 @@
 % Please edit documentation in R/executeAll.r
 \name{executeOne}
 \alias{executeOne}
-\title{Execute one script in the background not loading anything in the user's current environment}
+\title{Execute one script in the background without loading anything in the user's current environment}
 \usage{
 executeOne(fullPath = NULL, echo = FALSE, local = TRUE)
 }

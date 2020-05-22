@@ -1,4 +1,4 @@
-#' Execute one script in the background not loading anything in the user's current environment
+#' Execute one script in the background without loading anything in the user's current environment
 #'
 #' Source the given file with a .r or .R extension.
 #'

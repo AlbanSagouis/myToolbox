@@ -7,6 +7,8 @@
 
 ## random_2020
 
+# string_to_find
+
 dataset_id <- 'random_2020'
 
 load(file=paste0('data/raw data/', dataset_id, '/ddata'))
@@ -20,6 +22,8 @@ dat$day <- format(ddata$COLLECTION_DATE, "%d")
 dir.create(paste0('data/wrangled data/', dataset_id), showWarnings = FALSE)
 write.csv(dat, paste0('data/wrangled data/', dataset_id, "/", dataset_id, '.csv'),
           row.names=FALSE)
-=FALSE)
-LSE)
+
+
+
+
 
