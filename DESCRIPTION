@@ -1,4 +1,4 @@
-Package: myToolbox
+Package: tb
 Type: Package
 Title: Various functions I gathered or wrote
 Version: 0.0.4.9002
