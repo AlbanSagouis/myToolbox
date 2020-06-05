@@ -17,7 +17,7 @@ gsubInOneScript(fullPath, pattern, replacement, newPath = NULL)
 following this path.}
 }
 \value{
-SHOULD RETURN THE NUMBER OF MATCHES
+The number of matches in the file.
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.

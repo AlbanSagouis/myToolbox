@@ -25,7 +25,7 @@ the scripts to modify.}
 \item{newPath}{description}
 }
 \value{
-SHOULD RETURN THE NUMBER OF MATCHES PER SCRIPTS
+A data.frame with the number of matches in each file.
 }
 \description{
 Open a file with a .r or .R extension and runs a gsub.

@@ -8,7 +8,7 @@
 #' @param newPath Character vector. Used if a copy of the script should be created
 #' following this path.
 #'
-#' @return SHOULD RETURN THE NUMBER OF MATCHES
+#' @return The number of matches in the file.
 #'
 #' @details If not working inside an Rproject, path has to be complete from root.
 #' @seealso To search for text in any text file, see \code{search_files}.
@@ -18,15 +18,17 @@
 gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
    sourceF <- file(fullPath, open = "r+b")
    lines <- readLines(sourceF)
+   matches <- sapply(lines, grepl, pattern = pattern)
 
-   for(i in seq_along(lines)) {
+   for(i in which(matches)) {
       lines[i] <- gsub(lines[i], pattern=pattern, replacement=replacement)
    }
 
    if(!is.null(newPath)) sourceF <- file(newPath, open = "w")
 
-   writeLines(text = lines, con = sourceF, sep = "\n")
+   writeLines(text = lines, con = sourceF)  #, sep = "\n"
    close(sourceF)  # closing connection
+   return(sum(matches))
 }
 
 # warning before for backup?
@@ -43,7 +45,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #' @param recursive logical. Passed to \code{\link[base:list.files]{base::list.files}}. Should the listing recurse into directories?
 #' @param newPath description
 #'
-#' @return SHOULD RETURN THE NUMBER OF MATCHES PER SCRIPTS
+#' @return A data.frame with the number of matches in each file.
 #'
 #' @details If not working inside an Rproject, path has to be complete from root.
 #' @author Alban Sagouis
@@ -51,7 +53,8 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 
 gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath = NULL) {
    listF <- list.files(fullPath, pattern = ".R|.r", full.names = TRUE, recursive = recursive)
-   lapply(listF, gsubInOneScript, pattern, replacement, newPath)
+   nmatches <- sapply(listF, gsubInOneScript, pattern, replacement, newPath)
+   return( data.frame( nmatches[nmatches>0] ) )
 }
 
 # warning before for backup?
