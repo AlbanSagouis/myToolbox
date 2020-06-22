@@ -1,7 +1,7 @@
 Package: tb
 Type: Package
 Title: Various functions I gathered or wrote
-Version: 0.0.4.9004
+Version: 0.0.6.0
 Date: 2020-06-05
 Author: Alban Sagouis [aut, cre]
 Maintainer: Alban Sagouis <alban.sagouis@idiv.de>

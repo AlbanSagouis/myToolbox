@@ -20,7 +20,8 @@ following this path.}
 The number of matches in the file.
 }
 \description{
-Open a file with a .r or .R extension and runs a gsub.
+Open a file with a .r or .R extension and runs a gsub. No copy made except if newPath is
+specified, use at your own risks.
 }
 \details{
 If not working inside an Rproject, path has to be complete from root.

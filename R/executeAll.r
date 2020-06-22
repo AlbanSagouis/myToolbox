@@ -8,7 +8,7 @@
 #'
 #' @return NULL
 #' @details If not working inside an Rproject, path has to be complete from root.
-#'
+#' @import data.table
 #' @author Alban Sagouis
 #'
 #'
@@ -16,6 +16,7 @@
 
 executeOne <- function(fullPath = NULL, echo = FALSE, local = TRUE) {
    source(fullPath, encoding = 'UTF-8', echo = echo, local = local)
+   # sys.source(fullPath, envir = new.env(), chdir = FALSE, keep.source = FALSE, keep.parse.data = FALSE, toplevel.env = topenv())
 }
 
 #' Execute all scripts inside a folder

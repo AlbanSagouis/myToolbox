@@ -1,6 +1,7 @@
 #' Replace text in one script
 #'
-#' Open a file with a .r or .R extension and runs a gsub.
+#' Open a file with a .r or .R extension and runs a gsub. No copy made except if newPath is
+#' specified, use at your own risks.
 #'
 #' @param fullPath A character vector with the path to the script to modify.
 #' @param pattern passed to \code{\link[base:grep]{base::gsub}}.
