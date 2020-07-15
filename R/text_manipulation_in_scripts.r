@@ -39,7 +39,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #'
 #' Open a file with a .r or .R extension and runs a gsub.
 #'
-#' @param fullPath A character vector with the path to the folder countaining
+#' @param fullPath A character vector with the path to the folder containing
 #' the scripts to modify.
 #' @param pattern passed to \code{\link[base:grep]{base::gsub}}.
 #' @param replacement passed to \code{\link[base:grep]{base::gsub}}.
@@ -53,7 +53,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #' @export
 
 gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath = NULL) {
-   listF <- list.files(fullPath, pattern = ".R|.r", full.names = TRUE, recursive = recursive)
+   listF <- list.files(fullPath, pattern = ".R$|.r$", full.names = TRUE, recursive = recursive)
    nmatches <- sapply(listF, gsubInOneScript, pattern, replacement, newPath)
    return( data.frame( nmatches[nmatches>0] ) )
 }
