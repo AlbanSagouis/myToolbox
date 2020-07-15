@@ -13,7 +13,7 @@ gsubInOneFolder(
 )
 }
 \arguments{
-\item{fullPath}{A character vector with the path to the folder countaining
+\item{fullPath}{A character vector with the path to the folder containing
 the scripts to modify.}
 
 \item{pattern}{passed to \code{\link[base:grep]{base::gsub}}.}
@@ -28,10 +28,15 @@ the scripts to modify.}
 A data.frame with the number of matches in each file.
 }
 \description{
-Open a file with a .r or .R extension and runs a gsub.
+Opens all files with a .r or .R extension in the directory and runs a gsub.
 }
 \details{
 If not working inside an Rproject, path has to be complete from root.
+}
+\examples{
+\dontrun{gsubInOneFolder('./R', pattern = 'sum', replacement = 'sumNA')}
+\dontrun{gsubInOneFolder('.',  pattern = 'read.csv', replacement = 'data.table::fread')}
+
 }
 \author{
 Alban Sagouis

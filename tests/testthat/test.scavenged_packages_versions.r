@@ -1,7 +1,7 @@
 context("Testing that code I took from others has not been updated on CRAN")
 
 test_that("tfse", {
-   expect_true(rvcheck::check_cran('tfse')$up_to_date)
+   expect_equal(rvcheck::check_cran('tfse')$latest_version, '0.5.0')
 })
 
 

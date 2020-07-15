@@ -26,6 +26,9 @@ specified, use at your own risks.
 \details{
 If not working inside an Rproject, path has to be complete from root.
 }
+\examples{
+\dontrun{gsubInOneScript('DESCRIPTION','foobar@gmail.com','foobar@protonmail.com')}
+}
 \seealso{
 To search for text in any text file, see \code{search_files}.
 }

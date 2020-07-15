@@ -13,6 +13,8 @@
 #'
 #' @details If not working inside an Rproject, path has to be complete from root.
 #' @seealso To search for text in any text file, see \code{search_files}.
+#'
+#' @examples \dontrun{gsubInOneScript('DESCRIPTION','foobar@gmail.com','foobar@protonmail.com')}
 #' @author Alban Sagouis
 #' @export
 
@@ -37,7 +39,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 
 #' Replace text in all scripts from a folder
 #'
-#' Open a file with a .r or .R extension and runs a gsub.
+#' Opens all files with a .r or .R extension in the directory and runs a gsub.
 #'
 #' @param fullPath A character vector with the path to the folder containing
 #' the scripts to modify.
@@ -49,6 +51,10 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #' @return A data.frame with the number of matches in each file.
 #'
 #' @details If not working inside an Rproject, path has to be complete from root.
+#'
+#' @examples \dontrun{gsubInOneFolder('./R', pattern = 'sum', replacement = 'sumNA')}
+#' @examples \dontrun{gsubInOneFolder('.',  pattern = 'read.csv', replacement = 'data.table::fread')}
+#'
 #' @author Alban Sagouis
 #' @export
 
@@ -59,5 +65,3 @@ gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, n
 }
 
 # warning before for backup?
-
-

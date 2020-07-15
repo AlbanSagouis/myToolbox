@@ -10,7 +10,7 @@ Description: This package provides a set of convenience functions. Some function
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests: rprojroot, testthat, rvcheck
+Suggests: testthat, rvcheck
 Imports: data.table
 RoxygenNote: 7.1.1
 NeedsCompilation: no

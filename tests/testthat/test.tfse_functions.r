@@ -1,9 +1,8 @@
 context("Testing tfse")
 # https://rdrr.io/cran/tfse/src/tests/testthat/test-tfse.R
-root <- rprojroot::find_package_root_file()
 
 test_that("tfse.search_files", {
-   t <- capture.output(search_files('string_to_find', path = paste0(root,'/tests/testthat/')))
+   t <- capture.output(search_files('string_to_find', path = test_path()))
    expect_true(is.character(t))
    o <- capture.output(search_files("DESCRIPTION", path = "../.."))
    expect_true(is.character(o))
