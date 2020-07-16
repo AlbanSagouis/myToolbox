@@ -15,6 +15,6 @@ Suggests:
     rprojroot,
     testthat
 Imports: data.table
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 NeedsCompilation: no
 Packaged: 2020-05-18 08:21:18 UTC; as80fywe
