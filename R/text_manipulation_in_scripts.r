@@ -59,7 +59,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
 #' @export
 
 gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath = NULL) {
-   listF <- list.files(fullPath, pattern = ".R$|.r$", full.names = TRUE, recursive = recursive)
+   listF <- list.files(fullPath, pattern = "\\.R$|\\.r$", full.names = TRUE, recursive = recursive)
    nmatches <- sapply(listF, gsubInOneScript, pattern, replacement, newPath)
    return( data.frame( nmatches[nmatches>0] ) )
 }
