@@ -9,7 +9,8 @@ gsubInOneFolder(
   pattern,
   replacement,
   recursive = FALSE,
-  newPath = NULL
+  newPath = NULL,
+  userCheck = TRUE
 )
 }
 \arguments{
@@ -23,6 +24,9 @@ the scripts to modify.}
 \item{recursive}{logical. Passed to \code{\link[base:list.files]{base::list.files}}. Should the listing recurse into directories?}
 
 \item{newPath}{description}
+
+\item{userCheck}{Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
+before replacement.}
 }
 \value{
 A data.frame with the number of matches in each file.

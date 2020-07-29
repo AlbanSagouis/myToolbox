@@ -20,7 +20,7 @@ lapply(testfiles, function(testfilepath) {
 })
 
 test_that("gsubInOneFolder works", {
-   gsubInOneFolder(fullPath = tempdir(), 'test', 'experiment')
+   gsubInOneFolder(fullPath = tempdir(), 'test', 'experiment', userCheck = FALSE)
    lapply(testfiles, function(tmp_path) {
       changed_object <- readLines(tmp_path)
       expect_equal(length(changed_object), 1)

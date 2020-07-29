@@ -4,7 +4,13 @@
 \alias{gsubInOneScript}
 \title{Replace text in one script}
 \usage{
-gsubInOneScript(fullPath, pattern, replacement, newPath = NULL)
+gsubInOneScript(
+  fullPath,
+  pattern,
+  replacement,
+  newPath = NULL,
+  userCheck = TRUE
+)
 }
 \arguments{
 \item{fullPath}{A character vector with the path to the script to modify.}
@@ -15,6 +21,9 @@ gsubInOneScript(fullPath, pattern, replacement, newPath = NULL)
 
 \item{newPath}{Character vector. Used if a copy of the script should be created
 following this path.}
+
+\item{userCheck}{Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
+before replacement.}
 }
 \value{
 The number of matches in the file.

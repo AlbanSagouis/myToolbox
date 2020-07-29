@@ -27,7 +27,9 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, user
 
    if(userCheck) {
       search_these_files(pattern, fullPath)
-      if(askYesNo(paste0('Do you want to replace matches of "', pattern, '" with "', replacement, '"?'))) {
+      answer <- utils::askYesNo(paste0('Do you want to replace matches of "', pattern, '" with "', replacement, '"?'))
+      if(is.na(answer)) stop
+      if(answer) {
          for(i in which(matches)) {
             lines[i] <- gsub(lines[i], pattern=pattern, replacement=replacement)
          }
@@ -56,6 +58,8 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, user
 #' @param replacement passed to \code{\link[base:grep]{base::gsub}}.
 #' @param recursive logical. Passed to \code{\link[base:list.files]{base::list.files}}. Should the listing recurse into directories?
 #' @param newPath description
+#' @param userCheck Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
+#' before replacement.
 #'
 #' @return A data.frame with the number of matches in each file.
 #'
@@ -67,10 +71,15 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, user
 #' @author Alban Sagouis
 #' @export
 
-gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath = NULL) {
+gsubInOneFolder <- function(fullPath, pattern, replacement, recursive = FALSE, newPath = NULL, userCheck = TRUE) {
    listF <- list.files(fullPath, pattern = "\\.R$|\\.r$", full.names = TRUE, recursive = recursive)
-   nmatches <- sapply(listF, gsubInOneScript, pattern, replacement, newPath)
+   if(userCheck) {
+      search_these_files(pattern, listF)
+      answer <- utils::askYesNo(paste0('Do you want to replace matches of "', pattern, '" with "', replacement, '"?'))
+      if(is.na(answer) || !answer) stop
+   }
+
+   nmatches <- sapply(listF, gsubInOneScript, pattern, replacement, newPath, userCheck = FALSE)
+
    return( data.frame( nmatches[nmatches>0] ) )
 }
-
-# warning before for backup?
