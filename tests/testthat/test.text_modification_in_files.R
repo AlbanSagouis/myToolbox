@@ -4,7 +4,7 @@ txt <- paste0('test ', paste(sample(c(rep(" ", 10), letters), 100, replace = TRU
 list2env(fakeTextFile(txt = txt), globalenv())
 
 test_that("gsubInOneScript works", {
-   gsubInOneScript(fullPath = tmp_path, 'test', 'experiment')
+   gsubInOneScript(fullPath = tmp_path, 'test', 'experiment', userCheck = FALSE)
    changed_object <- readLines(tmp_path)
    expect_equal(length(changed_object), 1)
    expect_equal(nchar(changed_object[1]), 111)

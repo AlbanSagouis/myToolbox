@@ -26,7 +26,7 @@ search_files <- function(x, path = ".", recursive = TRUE, all.files = FALSE, tex
          f, value = TRUE)
    } else {
       f <- grep(
-         "\\.png$|\\.jpeg$|\\.jpg$|\\.rda$|\\.rds$|\\.tiff$|\\.pdf",
+         "\\.png$|\\.jpeg$|\\.jpg$|\\.rda$|\\.rds$|\\.tiff$|\\.pdf$",
          f, invert = TRUE, value = TRUE)
    }
    s <- lapply(f, extra_text_search, pat = x)

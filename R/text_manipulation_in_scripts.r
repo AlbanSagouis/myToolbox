@@ -8,6 +8,8 @@
 #' @param replacement passed to \code{\link[base:grep]{base::gsub}}.
 #' @param newPath Character vector. Used if a copy of the script should be created
 #' following this path.
+#' @param userCheck Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
+#' before replacement.
 #'
 #' @return The number of matches in the file.
 #'
@@ -18,13 +20,22 @@
 #' @author Alban Sagouis
 #' @export
 
-gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
+gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, userCheck = TRUE) {
    sourceF <- file(fullPath, open = "r+b")
    lines <- readLines(sourceF)
    matches <- sapply(lines, grepl, pattern = pattern)
 
-   for(i in which(matches)) {
-      lines[i] <- gsub(lines[i], pattern=pattern, replacement=replacement)
+   if(userCheck) {
+      search_these_files(pattern, fullPath)
+      if(askYesNo(paste0('Do you want to replace matches of "', pattern, '" with "', replacement, '"?'))) {
+         for(i in which(matches)) {
+            lines[i] <- gsub(lines[i], pattern=pattern, replacement=replacement)
+         }
+      }
+   } else {
+      for(i in which(matches)) {
+         lines[i] <- gsub(lines[i], pattern=pattern, replacement=replacement)
+      }
    }
 
    if(!is.null(newPath)) sourceF <- file(newPath, open = "w")
@@ -33,8 +44,6 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL) {
    close(sourceF)  # closing connection
    return(sum(matches))
 }
-
-# warning before for backup?
 
 
 #' Replace text in all scripts from a folder
