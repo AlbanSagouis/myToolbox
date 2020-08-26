@@ -1,16 +1,18 @@
 #' Increment version number of a package
 #'
 #' Reads DESCRIPTION from installed package 'pkg' and makes a new one in the specified
-#''folder'. Four options for 'increase' are "major", minor", "patch" and "dev"
+#' 'folder'. Four options for 'increase' are "major", minor", "patch" and "dev"
 #' respectively incrementing the first to fourth element of version 0.1.0.9012.
 #' Also changes the date to system date.
 #'
-#' @param pkg A character vector withthe name of the package to update.
-#' @param folder Folder in which DESCRIPTION is saved. Should be left as '.'.
-#' @param increase Character string, either major, minor, patch or dev.
-#,
+#' @param pkg A character vector with the name of the package to update.
+#' @param folder Folder in which DESCRIPTION is saved. Can be left as '.'.
+#' @param increase Character string, either 'major', 'minor', 'patch' or 'dev.'
+#'
 #' @return NULL
-#' @details Function originally posted by alko989 here https://stackoverflow.com/q/24209336. Hadley Wickham discusses when and how increment version numbers in his book http://r-pkgs.had.co.nz/release.html#release-version
+#' @details Function originally posted by alko989 here https://stackoverflow.com/q/24209336.
+#' Hadley Wickham discusses when and how increment version numbers in
+#' this book http://r-pkgs.had.co.nz/release.html#release-version
 #'
 #' @author alko989, Alban Sagouis
 #'
