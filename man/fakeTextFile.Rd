@@ -41,8 +41,8 @@ If not working inside an R project, dir_path has to be complete from root.
 \dontrun{fakeTextFile()}
 }
 \seealso{
-For more flexibility in random string generation, see \code{\link[NCmisc:fakeLines]{NCmisc::fakeLines}}.
-   For more automated paragraph generation, see \code{\link[stringi:stri_rand_lipsum]{stringi::stri_rand_lipsum}}.
+For more flexibility in random string generation, see \code{NCmisc::fakeLines}.
+   For more automated paragraph generation, see \code{stringi::stri_rand_lipsum}.
 }
 \author{
 Alban Sagouis

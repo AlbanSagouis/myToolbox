@@ -10,7 +10,8 @@ gsubInOneFolder(
   replacement,
   recursive = FALSE,
   newPath = NULL,
-  userCheck = TRUE
+  userCheck = TRUE,
+  ignore.case = FALSE
 )
 }
 \arguments{
@@ -21,12 +22,14 @@ the scripts to modify.}
 
 \item{replacement}{passed to \code{\link[base:grep]{base::gsub}}.}
 
-\item{recursive}{logical. Passed to \code{\link[base:list.files]{base::list.files}}. Should the listing recurse into directories?}
+\item{recursive}{logical. Passed to \code{base::list.files}. Should the listing recurse into directories?}
 
 \item{newPath}{description}
 
 \item{userCheck}{Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
 before replacement.}
+
+\item{ignore.case}{logical. FALSE for case-sensitive matches. Default is TRUE.}
 }
 \value{
 A data.frame with the number of matches in each file.

@@ -10,6 +10,7 @@
 #' following this path.
 #' @param userCheck Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
 #' before replacement.
+#' @param ignore.case logical. FALSE for case-sensitive matches. Default is TRUE.
 #'
 #' @return The number of matches in the file.
 #'
@@ -20,13 +21,13 @@
 #' @author Alban Sagouis
 #' @export
 
-gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, userCheck = TRUE) {
+gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, userCheck = TRUE, ignore.case = FALSE) {
    sourceF <- file(fullPath, open = "r+b")
    lines <- readLines(sourceF)
    matches <- sapply(lines, grepl, pattern = pattern)
 
    if(userCheck) {
-      search_these_files(pattern, fullPath)
+      search_these_files(pattern, fullPath, ignore.case = ignore.case)
       answer <- utils::askYesNo(paste0('Do you want to replace matches of "', pattern, '" with "', replacement, '"?'))
       if(is.na(answer)) stop
       if(answer) {
@@ -56,7 +57,7 @@ gsubInOneScript <- function(fullPath, pattern, replacement, newPath = NULL, user
 #' the scripts to modify.
 #' @param pattern passed to \code{\link[base:grep]{base::gsub}}.
 #' @param replacement passed to \code{\link[base:grep]{base::gsub}}.
-#' @param recursive logical. Passed to \code{\link[base:list.files]{base::list.files}}. Should the listing recurse into directories?
+#' @param recursive logical. Passed to \code{base::list.files}. Should the listing recurse into directories?
 #' @param newPath description
 #' @param userCheck Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
 #' before replacement.
