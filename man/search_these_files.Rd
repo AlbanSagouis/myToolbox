@@ -4,12 +4,14 @@
 \alias{search_these_files}
 \title{Search these files}
 \usage{
-search_these_files(x, f)
+search_these_files(x, f, ignore.case = TRUE)
 }
 \arguments{
 \item{x}{Regex pattern}
 
 \item{f}{Vector of files}
+
+\item{ignore.case}{logical. FALSE for case-sensitive matches. Default is TRUE.}
 }
 \value{
 Prints matches

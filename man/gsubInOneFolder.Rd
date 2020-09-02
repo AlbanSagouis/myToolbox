@@ -35,7 +35,7 @@ A data.frame with the number of matches in each file.
 Opens all files with a .r or .R extension in the directory and runs a gsub.
 }
 \details{
-If not working inside an Rproject, path has to be complete from root.
+If not working inside an R project, path has to be complete from root.
 }
 \examples{
 \dontrun{gsubInOneFolder('./R', pattern = 'sum', replacement = 'sumNA')}

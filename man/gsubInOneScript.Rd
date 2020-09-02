@@ -33,7 +33,7 @@ Open a file with a .r or .R extension and runs a gsub. No copy made except if ne
 specified, use at your own risks.
 }
 \details{
-If not working inside an Rproject, path has to be complete from root.
+If not working inside an R project, path has to be complete from root.
 }
 \examples{
 \dontrun{gsubInOneScript('DESCRIPTION','foobar@gmail.com','foobar@protonmail.com')}

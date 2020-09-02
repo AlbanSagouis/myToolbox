@@ -48,12 +48,13 @@ search_files <- function(x, path = ".", recursive = TRUE, all.files = FALSE, tex
 #'
 #' @param x Regex pattern
 #' @param f Vector of files
+#' @param ignore.case logical. FALSE for case-sensitive matches. Default is TRUE.
 #' @return Prints matches
 #' @export
 #'
 
-search_these_files <- function(x, f) {
-   s <- lapply(f, extra_text_search, pat = x)
+search_these_files <- function(x, f, ignore.case = TRUE) {
+   s <- lapply(f, extra_text_search, pat = x, ignore.case = ignore.case)
    names(s) <- f
    s <- s[lengths(s) > 0]
    nms <- names(s)
@@ -66,7 +67,7 @@ search_these_files <- function(x, f) {
    }
 }
 
-extra_text_search <- function(file, pat) {
+extra_text_search <- function(file, pat, ignore.case = TRUE) {
    x <- tryCatch(readlines(file),
                  error = function(e) NULL,
                  warning = function(w) NULL)
@@ -74,10 +75,10 @@ extra_text_search <- function(file, pat) {
    x <- sub("^  ", "", x)
    term <- pat
    pat <- paste0("\\b.{0,32}", pat, ".{0,32}\\b")
-   if (!any(grepl(pat, x, ignore.case = TRUE))) {
+   if (!any(grepl(pat, x, ignore.case = ignore.case))) {
       return(invisible())
    }
-   l <- gregexpr_(x, pat, ignore.case = TRUE)
+   l <- gregexpr_(x, pat, ignore.case = ignore.case)
    l <- which(sapply(l, function(.x) .x[1] > 0))
    spaces <- max(nchar(l))
    spaces <- spaces - nchar(l)
@@ -90,16 +91,16 @@ extra_text_search <- function(file, pat) {
       }
    }
    l <- paste0(ss, l)
-   m <- regmatches_(x, pat, drop = TRUE, ignore.case = TRUE)
+   m <- regmatches_(x, pat, drop = TRUE, ignore.case = ignore.case)
    m <- paste0(paste0("[", l, "] "), m)
    m <- paste0(m, collapse = "\n")
    m <- gsub("( \\{\\{\\{(?!\\{))|((?<!\\})\\}\\}\\} )", "",
              m, perl = TRUE)
-   term <- regmatches_(m, term, drop = TRUE, ignore.case = TRUE)
+   term <- regmatches_(m, term, drop = TRUE, ignore.case = ignore.case)
    m <- paste0("\033[38;5;242m", m, "\033[39m")
    for (.x in term) {
       m <- gsub(.x, paste0("\033[31m", .x, "\033[38;5;242m"),
-                m, ignore.case = TRUE)
+                m, ignore.case = ignore.case)
    }
    paste0("\033[38;5;242m", m, "\033[39m")
 }
