@@ -9,7 +9,8 @@ gsubInOneScript(
   pattern,
   replacement,
   newPath = NULL,
-  userCheck = TRUE
+  userCheck = TRUE,
+  ignore.case = FALSE
 )
 }
 \arguments{
@@ -24,6 +25,8 @@ following this path.}
 
 \item{userCheck}{Logical, default = TRUE. Matches are shown to check the pattern `accuracy`
 before replacement.}
+
+\item{ignore.case}{logical. FALSE for case-sensitive matches. Default is TRUE.}
 }
 \value{
 The number of matches in the file.
@@ -37,6 +40,7 @@ If not working inside an R project, path has to be complete from root.
 }
 \examples{
 \dontrun{gsubInOneScript('DESCRIPTION','foobar@gmail.com','foobar@protonmail.com')}
+\dontrun{gsubInOneScript('master.r','ifelse','data.table::fifelse')}
 }
 \seealso{
 To search for text in any text file, see \code{search_files}.

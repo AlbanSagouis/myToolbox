@@ -12,6 +12,7 @@ regmatches_ <- function(x, pat, drop = FALSE, ...) UseMethod("regmatches_")
 
 #' @inheritParams regmatches_
 #' @rdname regmatches_
+#' @author Michael Wayne Kearney
 #' @export
 regmatches_first <- function(x, pat, drop = FALSE, ...) UseMethod("regmatches_first")
 
@@ -66,6 +67,7 @@ regmatches_.list <- function(x, pat, drop = FALSE, ...) {
 #' @param pat Reg ex pattern
 #' @param ... Other args passed to base (g)regexpr
 #' @return Pattern match positions
+#' @author Michael Wayne Kearney
 #' @export
 gregexpr_ <- function(x, pat, ...) {
    args <- list(pattern = pat, text = x, ...)

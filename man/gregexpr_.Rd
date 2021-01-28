@@ -22,3 +22,6 @@ Pattern match positions
 \description{
 smart gregexpr wrapper
 }
+\author{
+Michael Wayne Kearney
+}

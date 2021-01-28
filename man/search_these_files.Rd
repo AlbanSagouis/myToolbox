@@ -19,3 +19,6 @@ Prints matches
 \description{
 Look for text in a group of files
 }
+\author{
+Michael Wayne Kearney
+}

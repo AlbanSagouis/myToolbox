@@ -28,3 +28,6 @@ Value(s) matched via partial matching.
 Wrapper around \link[base]{match.arg} that defaults to ignoring case and
   trimming white space
 }
+\author{
+Michael Wayne Kearney
+}

@@ -24,3 +24,6 @@ Matching expression from text.
 \description{
 A wrapper around the base function combo of gregexpr and regmatches
 }
+\author{
+Michael Wayne Kearney
+}

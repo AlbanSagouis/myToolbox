@@ -12,6 +12,7 @@
 #' @param x Input
 #' @param ... Other args passed to \code{readLines}.
 #' @return Output
+#' @author Michael Wayne Kearney
 #' @export
 #'
 readlines <- function(x, ...) {

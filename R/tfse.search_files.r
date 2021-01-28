@@ -11,6 +11,7 @@
 #'   .Rmd .md .html .txt .cpp .h files.
 #' @return Output from terminal - file name, line number, and preview of
 #'   matching text
+#' @author Michael Wayne Kearney
 #' @export
 #'
 
@@ -50,6 +51,7 @@ search_files <- function(x, path = ".", recursive = TRUE, all.files = FALSE, tex
 #' @param f Vector of files
 #' @param ignore.case logical. FALSE for case-sensitive matches. Default is TRUE.
 #' @return Prints matches
+#' @author Michael Wayne Kearney
 #' @export
 #'
 

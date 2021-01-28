@@ -13,6 +13,7 @@
 #' @param trim_ws logical indicating whether to trim surrounding white space.
 #'   Defaults to TRUE
 #' @return Value(s) matched via partial matching.
+#' @author Michael Wayne Kearney
 #' @export
 match_arg <- function(arg, choices,
                       multiple = FALSE,
@@ -70,6 +71,7 @@ match_arg <- function(arg, choices,
 #' @param override Logical indicating whether to override existing values in
 #'   args with the values provided as a named argument here.
 #' @return Argument list with updated values.
+#' @author Michael Wayne Kearney
 #' @examples
 #' ## arg list
 #' args <- list(x = 5, y = TRUE, z = FALSE)

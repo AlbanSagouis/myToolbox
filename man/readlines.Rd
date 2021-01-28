@@ -21,3 +21,6 @@ Read lines of file
 Simple wrapper around \code{\link[base]{readLines}} that automates opening and
   closing of connection file.
 }
+\author{
+Michael Wayne Kearney
+}

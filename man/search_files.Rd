@@ -32,3 +32,6 @@ Output from terminal - file name, line number, and preview of
 \description{
 Returns matching files and line numbers of given string pattern.
 }
+\author{
+Michael Wayne Kearney
+}

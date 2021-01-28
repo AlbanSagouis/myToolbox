@@ -33,3 +33,6 @@ add_arg_if(args, w = TRUE, z = TRUE)
 add_arg_if(args, x = 10, z = TRUE, override = TRUE)
 
 }
+\author{
+Michael Wayne Kearney
+}
