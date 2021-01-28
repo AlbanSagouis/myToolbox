@@ -5,10 +5,10 @@ Version: 0.0.6.9004
 Date: 2020-09-02
 Author: Alban Sagouis [aut, cre]
 Maintainer: Alban Sagouis <alban.sagouis@idiv.de>
-Description: This package provides a set of convenience functions. Some functions come for
+Description: This package provides a set of convenience functions. Some functions come from
           other packages. - tfse._ functions come from `tfse` package published under MIT
           license by Michael Wayne Kearney.
-License: MIT + file LICENSE
+License: CC BY-NC-SA 4.0
 Encoding: UTF-8
 LazyData: true
 Suggests: assertthat, testthat, rvcheck

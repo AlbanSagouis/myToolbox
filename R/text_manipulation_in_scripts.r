@@ -18,6 +18,7 @@
 #' @seealso To search for text in any text file, see \code{search_files}.
 #'
 #' @examples \dontrun{gsubInOneScript('DESCRIPTION','foobar@gmail.com','foobar@protonmail.com')}
+#' @examples \dontrun{gsubInOneScript('master.r','ifelse','data.table::fifelse')}
 #' @author Alban Sagouis
 #' @export
 

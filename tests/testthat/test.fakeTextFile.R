@@ -25,3 +25,5 @@ test_that("fakeTextFile fails well", {
    expect_error(fakeTextFile(txt = 3))
    expect_error(fakeTextFile(n_lines = 0))
 })
+
+# test order of importance between dir_path and file_path
